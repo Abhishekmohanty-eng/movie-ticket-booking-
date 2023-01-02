@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
 
 
-const moviesSchema = new mongoose.Schema({
-  moviesName:{
+const showsSchema = new mongoose.Schema({
+  showsName:{
     type: 'string',
     require:true,
     unique:true,
 
   },
-  moviesDateOfrelease:{
+  showsDateOfrelease:{
     type: 'Date',
     require:true,
   
-  },theterNameOfMovie:{
+  },theterNameOfshows:{
     type: 'string',
     require:true,
   },
-  movieTimeA:{
+  showsTimeA:{
     type: 'string',
     require:true,
     seatNumA:{
@@ -25,7 +25,7 @@ const moviesSchema = new mongoose.Schema({
     }
    
   },
-  movieTimeB:{
+  showTimeB:{
     type: 'string',
     require:true,
     seatNumB:{
@@ -34,18 +34,14 @@ const moviesSchema = new mongoose.Schema({
     }
    
   },
-  movieTimeC:{
+  showTimeC:{
     type: 'string',
     require:true,
     seatNumC:{
       min:1,
       max:100
     }
-
-  }
-       
-   
+  } 
 }, { timestamps: true })
 
-
-module.exports = mongoose.model('moviesModels', moviesSchema)
+module.exports = mongoose.model("showModels", showsSchema)
